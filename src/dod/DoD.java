@@ -4,6 +4,12 @@
  */
 package dod;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author tdahl01
@@ -28,6 +34,7 @@ public class DoD {
             }catch(java.io.IOException e){
                 System.out.println(e);
             }
+            cmd = String.valueOf(cmd.charAt(0));
             if(cmd.equalsIgnoreCase("n")){
                 if(player.location.north!=null){
                     player.location = player.location.north;
@@ -60,7 +67,13 @@ public class DoD {
                     System.out.println("There is no exit to the west.");
                 }
             }
-            if(cmd.equalsIgnoreCase("quit")){
+            
+            if(cmd.equalsIgnoreCase("l")){
+                System.out.println("You are "+player.location.desc);
+            }
+            
+            if(cmd.equalsIgnoreCase("q")){
+                cmd = "quit";
                 System.out.println("You have failed your quest.");
             }
         }
