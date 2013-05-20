@@ -20,8 +20,8 @@ public class DoD {
         Player player = new Player(world.locations.get(0));
 
         String cmd="";
+        System.out.println("You are "+player.location.desc);
         while(!cmd.equalsIgnoreCase("quit")){
-            System.out.println("You are "+player.location.desc);
             System.out.println("What next?");
             try{
                 cmd = stdin.readLine();
@@ -31,6 +31,7 @@ public class DoD {
             if(cmd.equalsIgnoreCase("n")){
                 if(player.location.north!=null){
                     player.location = player.location.north;
+                    System.out.println("You are "+player.location.desc);
                 }else{
                     System.out.println("There is no exit to the north.");
                 }
@@ -38,6 +39,7 @@ public class DoD {
             if(cmd.equalsIgnoreCase("e")){
                 if(player.location.east!=null){
                     player.location = player.location.east;
+                    System.out.println("You are "+player.location.desc);
                 }else{
                     System.out.println("There is no exit to the east.");
                 }
@@ -45,6 +47,7 @@ public class DoD {
             if(cmd.equalsIgnoreCase("s")){
                 if(player.location.south!=null){
                     player.location = player.location.south;
+                    System.out.println("You are "+player.location.desc);
                 }else{
                     System.out.println("There is no exit to the south.");
                 }
@@ -52,12 +55,13 @@ public class DoD {
             if(cmd.equalsIgnoreCase("w")){
                 if(player.location.west!=null){
                     player.location = player.location.west;
+                    System.out.println("You are "+player.location.desc);
                 }else{
                     System.out.println("There is no exit to the west.");
                 }
             }
             if(cmd.equalsIgnoreCase("quit")){
-                System.out.println("You quit.");
+                System.out.println("You have failed your quest.");
             }
         }
         System.out.println("Goodbye!");
