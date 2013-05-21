@@ -4,6 +4,8 @@
  */
 package dod;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -44,12 +46,30 @@ public class DoDTest {
    //     fail("The test case is a prototype.");
    // }
 
-    public void testWorldLocations() {
+    public void testStartWorldName() {
         // TODO Check The Locations have right descriptions.
         World world = new World();
 
         System.out.println("* UtilsJUnit4Test: WorldTest1 - check Locations");
 
         assertEquals("by a babbling brook", world.locations.get(0).desc);
+    }
+    public void testMap(){
+        World testMap = new World();
+        Player testPiece = new Player(testMap.locations.get(0));
+        
+        ArrayList<Location> fringe = null, visited = null;
+        boolean incompleteTest = true;
+        
+        fringe.add(0, testMap.locations.get(0));
+        
+        while (incompleteTest){
+            if (){
+                
+            }
+            if (fringe.get(0) == null){
+                incompleteTest = false;
+            }
+        }
     }
 }
